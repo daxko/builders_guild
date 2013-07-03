@@ -1,2 +1,15 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h1>Books</h1>
+
+<div ng-app ng-controller="BooksController">
+  <div class="add-book">
+    Name: <input type="text" ng-model="book.name" />
+    URL: <input type="text" ng-model="book.url" />
+    <input type="button" value="Add" ng-click="add_book(book)" />
+  </div>
+  <table>
+    <tr ng-repeat="book in books">
+      <td>{{ book.name }}</td>
+      <td>{{ book.url }}</td>
+    </tr>
+  </table>
+</div>
